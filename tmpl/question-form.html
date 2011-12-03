@@ -6,8 +6,8 @@
 		<label for="user-response">I personally think...</label>
 		<div class="input">
 			<ul class="inputs-list">
-				<% for ( var i = 0; i < user_responses.length; i++ ) { %>
-				<li><label><input value="<%= user_responses[i].answer %>" type="radio" name="user-response"><span><%= user_responses[i].desc %></span></label></li>
+				<% for ( var i = 0; i < choices.length; i++ ) { %>
+				<li><label><input value="<%= choices[i].answer %>" type="radio" name="user-response"><span><%= choices[i].desc %></span></label></li>
 				<% } %>
 			</ul>
 		</div>
@@ -17,8 +17,8 @@
 		<label for="accepted-response">Answers I'll accept...</label>
 		<div class="input">
 			<ul class="inputs-list">
-				<% for ( var i = 0; i < accepted_responses.length; i++ ) { %>
-				<li><label><input value="<%= user_responses[i].answer %>" type="checkbox" name="accepted-response"><span><%= accepted_responses[i].desc %></label></li>
+				<% for ( var i = 0; i < choices.length; i++ ) { %>
+				<li><label><input value="<%= choices[i].answer %>" type="checkbox" name="accepted-response"><span><%= choices[i].desc %></label></li>
 				<% } %>
 			</ul>
 		</div>
@@ -28,9 +28,11 @@
 		<label for="question-relevance">This question is...</label>
 		<div class="input">
 		<ul class="inputs-list">
-			<% for ( var i = 0; i < question_relevance.length; i++ ) { %>
-				<li><label><input value="<%= question_relevance[i].answer %>" type="radio" name="question-relevance"><span><%= question_relevance[i].desc %></label></li>
-				<% } %>
+		  <li><label><input value="0" type="radio" name="question-relevance"><span>Irrelevant</span></label></li>
+		  <li><label><input value="1" type="radio" name="question-relevance"><span>A Little Important</span></label></li>
+		  <li><label><input value="10" type="radio" name="question-relevance"><span>Somewhat Important</span></label></li>
+		  <li><label><input value="50" type="radio" name="question-relevance"><span>Very Important</span></label></li>
+		  <li><label><input value="250" type="radio" name="question-relevance"><span>Mandatory</span></label></li>
 		</ul>
 		</div>
 	</fieldset>
