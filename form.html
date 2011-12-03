@@ -1,7 +1,10 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="style.css" />
+	<title>OkCandidate</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css" />
 
 </head>
 <body>
@@ -16,23 +19,61 @@
 
 		<div class="content">
 
-			<div class="question">
+			<div class="message info">Find your match by answering <strong>15</strong> questions.</div>
 
-				<div class="message info">Find your match by answering questions.</div>
+			<div class="question">
 
 				<form method="POST" action="">
 
 				<h3>Was the United States obligated to enter Afghanistan after September 11th, 2001?</h3>
 
-				<ul class="user-response response-list">
-					<li><label><input class="radio" type="radio" name="user-response">First user response</label></li>
-					<li><label><input class="radio" type="radio" name="user-response">Second user response</label></li>
-					<li><label><input class="radio" type="radio" name="user-response">Third user response</label></li>
-				</ul>
+				<fieldset>
+					<label for="user-response">I personally think...</label>
+					<div class="input">
+						<ul class="inputs-list">
+							<li><label><input type="radio" name="user-response"><span>First user response</span></label></li>
+							<li><label><input type="radio" name="user-response"><span>Second user response</span></label></li>
+							<li><label><input class="radio" type="radio" name="user-response"><span>Third user response</span></label></li>
+						</ul>
+					</div>
+				</fieldset>
 
-				<h4>Answers I'll accept...</h4>
+				<fieldset>
+					<label for="accepted-response">Answers I'll accept...</label>
+					<div class="input">
+						<ul class="inputs-list">
+							<li><label><input type="checkbox" name="accepted-response">First user response</label></li>
+							<li><label><input type="checkbox" name="accepted-response">Second user response</label></li>
+							<li><label><input type="checkbox" name="accepted-response">Third user response</label></li>
+						</ul>
+					</div>
+				</fieldset>
 
-				<input type="submit" id="submit-question" name="submit-question" value="Submit" />
+				<fieldset>
+					<label for="question-relevance">This question is...</label>
+
+					<div class="input">
+					<ul class="inputs-list">
+						<li><label><input type="radio" name="question-relevance">Irrelevant</label></li>
+						<li><label><input type="radio" name="question-relevance">A little important</label></li>
+						<li><label><input type="radio" name="question-relevance">Somewhat important</label></li>
+						<li><label><input type="radio" name="question-relevance">Very important</label></li>
+						<li><label><input type="radio" name="question-relevance">Mandatory</label></li>
+					</ul>
+					</div>
+				</fieldset>
+			
+				<fieldset>
+					<label for="explanation">Explain your answer:</label>
+
+					<div class="input">
+						<textarea class="span7" name="explanation"></textarea>
+					</div>
+				</fieldset>
+
+				<div class="well submit-wrap">
+				<input type="submit" id="submit-question" name="submit-question" class="btn primary" value="Submit" />
+				</div>
 
 				</form>
 
