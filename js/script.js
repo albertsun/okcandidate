@@ -56,17 +56,20 @@ $(function() {
 	    },
 
 	    initialize: function(options) {
-
 		console.log("questionview initialize");
 		this.model = options.model;
 		this.model.bind('change', this.render, this);
 		this.model.bind('destroy', this.remove, this);
-		//this.render();
 	    },
 	    
 	    render: function() {
 		$(this.el).html(this.template(this.model.toJSON()));
 		$(window.App.el).html($(this.el));
+		$("form").bind("submit", function(e) {
+		    e.preventDefault();
+		    var result = $(this).serializeArray();
+		    Questions.showNext();
+		});
 		return this;
 	    },
 	    remove: function() {
