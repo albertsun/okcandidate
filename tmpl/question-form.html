@@ -1,0 +1,50 @@
+<form method="POST" action="">
+
+	<h3><%= question %></h3>
+
+	<fieldset>
+		<label for="user-response">I personally think...</label>
+		<div class="input">
+			<ul class="inputs-list">
+				<% for ( var i = 0; i < user_responses.length; i++ ) { %>
+				<li><label><input value="<%= user_responses[i].answer %>" type="radio" name="user-response"><span><%= user_responses[i].desc %></span></label></li>
+				<% } %>
+			</ul>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<label for="accepted-response">Answers I'll accept...</label>
+		<div class="input">
+			<ul class="inputs-list">
+				<% for ( var i = 0; i < accepted_responses.length; i++ ) { %>
+				<li><label><input value="<%= user_responses[i].answer %>" type="checkbox" name="accepted-response"><span><%= accepted_responses[i].desc %></label></li>
+				<% } %>
+			</ul>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<label for="question-relevance">This question is...</label>
+		<div class="input">
+		<ul class="inputs-list">
+			<% for ( var i = 0; i < question_relevance.length; i++ ) { %>
+				<li><label><input value="<%= question_relevance[i].answer %>" type="radio" name="question-relevance"><span><%= question_relevance[i].desc %></label></li>
+				<% } %>
+		</ul>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<label for="explanation">Explain your answer:</label>
+
+		<div class="input">
+			<textarea class="span7" name="explanation"></textarea>
+		</div>
+	</fieldset>
+
+	<div class="well submit-wrap">
+		<input type="submit" id="submit-question" name="submit-question" class="btn primary" value="Submit" />
+		<a href="#" class="btn" />Skip Question</a>
+	</div>
+</form>
