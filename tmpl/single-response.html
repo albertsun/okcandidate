@@ -6,6 +6,10 @@
 		<% for ( var i = 0; i < choices.length; i++ ) { %>
 			<li class="<% if ( user_response == choices[i].answer ) document.write(' my-response'); if ( jQuery.inArray( choices[i].answer, accepted_responses ) ) document.write(' accepted-response');  %>"><%= choices[i].desc %></li>
 		<% } %>
-	</ul>>
+	</ul>
+
+	<% if ( explanation ) { %>
+	<p><%= explanation %></p>
+	<% } %>
 
 </div>
