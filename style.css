@@ -1,8 +1,10 @@
-html, body {
+body {
 	margin: 0;
 	padding: 0;
 	background-color: #002D40;
 	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 17px;
 }
 
 a {
@@ -10,7 +12,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
+	font-weight: normal;
 }
 
 .message {
@@ -20,11 +22,6 @@ h1, h2, h3, h4, h5, h6 {
 	padding-right: 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-}
-
-.message.info {
-	border-color: #004854;
-	background-color: #87b9c2;
 }
 
 .wrap {
@@ -85,7 +82,8 @@ form ul.response-list li {
 	padding-bottom: 2px;
 }
 
-form ul.response-list li input.radio {
+form ul.response-list li input.radio,
+form ul.response-list li input.checkbox {
 	margin-right: 10px;
 }
 
