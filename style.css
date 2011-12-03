@@ -11,10 +11,6 @@ a {
 	color: #0066cc;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
-}
-
 .message {
 	border: 1px solid #888;
 	background-color: #EEE;
@@ -24,23 +20,14 @@ h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 5px;
 }
 
-.wrap {
-	margin-left: auto;
-	margin-right: auto;
-	width: 960px;
-}
 
-.main .wrap {
+.main {
 	background-color: #FFFFFF;
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 20px;
 	border: 1px solid #FF9132;
-}
-
-.main .content {
-	width: 620px;
 }
 
 .float-left {
