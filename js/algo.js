@@ -186,5 +186,6 @@ function calculate_scores(user, candidates) {
 }
 
 var scores = calculate_scores(user, candidates);
+scores = _.sortBy(scores, function(a) { return -a.score; });
 console.log(scores);
 //console.log(score(user,candidates[2]));
