@@ -30,6 +30,20 @@ $(function() {
 	    model: Question,
 	    initialize: function() {
 		console.log("questionlist initialize");
+		this.curr = 0;
+	    },
+	    showCurr: function() {
+		var q = Questions.at(this.curr);
+		console.log(q);
+		q.change();
+	    },
+	    showNext: function() {
+		if (this.curr < this.length-1) {
+		    this.curr += 1;
+		    this.showCurr();
+		} else {
+		    console.log("at end of questions");
+		}
 	    }
 	});
 
@@ -52,7 +66,7 @@ $(function() {
 	    
 	    render: function() {
 		$(this.el).html(this.template(this.model.toJSON()));
-		$(this.el).appendTo($(window.App.el));
+		$(window.App.el).html($(this.el));
 		return this;
 	    },
 	    remove: function() {
@@ -62,19 +76,14 @@ $(function() {
 	});
 
 	window.AppView = Backbone.View.extend({
-	    el: $("#okcandidate"),
+	    el: $("#question-container"),
 	    initialize: function() {
 		console.log("appview initialize");
 		window.Questions = new QuestionList(questions);
 	    },
 	    render: function() {
-		Questions.each(function(q) {
-		    console.log(q);
-		    q.change();
-		});
+		Questions.showCurr();
 	    }
-	    
-
 	});
 
 	$(".get-started").live("click", function(e) {
