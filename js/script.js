@@ -8,16 +8,17 @@ var USER = {
     name: "",
     responses: []
 };
+var scores;
 
 
-
-var questiontemplate, responsetemplate;
+var questiontemplate, responsetemplate, alluserstemplate;
 $(function() {
     
 
     $.when(
 	$.get("tmpl/question-form.html", function(data) { questiontemplate = data; }),
-	$.get("tmpl/single-response.html", function(data) { responsetemplate = data; })
+	$.get("tmpl/single-response.html", function(data) { responsetemplate = data; }),
+	$.get("tmpl/all-users.html", function(data) { alluserstemplate = data; })
     ).then(function() {
 
 	window.User = Backbone.Model.extend({
@@ -26,7 +27,7 @@ $(function() {
 		responses: []
 	    },
 	    initialize: function(data) {
-		console.log("user init");
+		//console.log("user init");
 		//this.question = 
 	    }
 	});
@@ -42,7 +43,7 @@ $(function() {
 	    initialize: function(data) {
 		this.set({ "question": window.questions_obj[this.toJSON().question_id].question });
 		
-		//console.log(this.toJSON());
+		////console.log(this.toJSON());
 		this.view = new ResponseView({model: this});
 		this.view.render();
 	    }
@@ -52,7 +53,7 @@ $(function() {
 	    template: _.template(responsetemplate),
 
 	    initialize: function(options) {
-		console.log("responseview initialize");
+		//console.log("responseview initialize");
 		this.model = options.model;
 		this.model.bind('change', this.render, this);
 		this.model.bind('destroy', this.remove, this);
@@ -69,9 +70,9 @@ $(function() {
 			d.choices[i].classes += " accepted-response";
 		    }
 		}
-		console.log(d);
+		//console.log(d);
 		$(this.el).html(this.template(d));
-		console.log(this.el);
+		//console.log(this.el);
 		$("#response-container").append($(this.el));
 	    },
 	    remove: function() {
@@ -88,7 +89,7 @@ $(function() {
 		};
 	    },
 	    initialize: function() {
-		console.log("question initialize");
+		//console.log("question initialize");
 		this.view = new QuestionView({model: this});
 	    }
 	});
@@ -96,20 +97,31 @@ $(function() {
 	window.QuestionList = Backbone.Collection.extend({
 	    model: Question,
 	    initialize: function() {
-		console.log("questionlist initialize");
+		//console.log("questionlist initialize");
 		this.curr = 0;
 	    },
 	    showCurr: function() {
+		//console.log(this.curr);
 		var q = Questions.at(this.curr);
-		//console.log(q);
+		////console.log(q);
 		q.change();
 	    },
 	    showNext: function() {
+		//console.log("showNext");
 		if (this.curr < this.length-1) {
 		    this.curr += 1;
 		    this.showCurr();
 		} else {
-		    console.log("at end of questions");
+		    //console.log("at end of questions");
+		    scores = _.sortBy(calculate_scores(USER, window.candidates), function(a) { return -a.score; });
+		    var scoredata = {};
+		    var respondents = [];
+		    for (var i=0,len=scores.length; i<len; i++) {
+			respondents[i] = scores[i].u2;
+			respondents[i].score = scores[i].score;
+		    }
+		    scoredata.respondents = respondents;
+		    $("#container").html(_.template(alluserstemplate, scoredata));
 		}
 	    }
 	});
@@ -123,7 +135,7 @@ $(function() {
 	    },
 
 	    initialize: function(options) {
-		console.log("questionview initialize");
+		//console.log("questionview initialize");
 		this.model = options.model;
 		this.model.bind('change', this.render, this);
 		this.model.bind('destroy', this.remove, this);
@@ -132,9 +144,6 @@ $(function() {
 	    render: function() {
 		$(this.el).html(this.template(this.model.toJSON()));
 		$(window.App.el).html($(this.el));
-		$("#skip-question").live("click", function(e) {
-		    Questions.showNext();
-		});
 		$("form").bind("submit", function(e) {
 		    e.preventDefault();
 		    var result = $(this).serializeArray();
@@ -156,9 +165,9 @@ $(function() {
 			    response["explanation"] = result[i].value;
 			}
 		    }
-		    var r = new Response(response)
-		    USER.responses.push(r);
-		    //console.log(r);
+		    var r = new Response(response);
+		    USER.responses.push(r.toJSON());
+		    ////console.log(r);
 		    //r.change();
 		    Questions.showNext();
 		});
@@ -174,7 +183,7 @@ $(function() {
 	    el: $("#question-container"),
 	    //responses_el: $("#response-container"),
 	    initialize: function() {
-		console.log("appview initialize");
+		//console.log("appview initialize");
 		window.Questions = new QuestionList(questions);
 	    },
 	    render: function() {
@@ -195,6 +204,9 @@ $(function() {
 	    }(Questions.toJSON()));
 	});
 	//$(".get-started").click();
-
+	$("#skip-question").live("click", function(e) {
+	    e.preventDefault();
+	    Questions.showNext();
+	});
     }); //end then
 });
