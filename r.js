@@ -679,7 +679,7 @@ var questions = [
         choices: [
             {answer: "For", desc: "Yes, I am for same-sex marriage."},
             {answer: "Against", desc: "No, I am against same-sex marriage."},
-            {answer: "Civil Unions", desc: "Yes, but don't use the term "marriage" for same-sex partnerships."},
+            {answer: "Civil Unions", desc: "Yes, but don't use the term \"marriage\" for same-sex partnerships."},
             
         ]
     },
