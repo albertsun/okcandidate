@@ -56,6 +56,15 @@ a {
 
 .header h1.site-title {
 	color: #FF9132;
+	margin: 10px 0;
+}
+
+.find-your-match {
+    margin: 10px 0;
+}
+
+.find-your-match h3 {
+    font-size: 24px;
 }
 
 form ul.response-list {
@@ -75,8 +84,7 @@ form ul.response-list li input.checkbox {
 }
 
 body.home .candidates .candidate {
-	width: 300px;
-	margin-left: 15px;
+	width: 285px;
 	margin-right: 15px;
 	border: 1px solid #EEEEEE;
 }
@@ -98,8 +106,7 @@ body.home .candidates .candidate .candidate-info {
 }
 
 .main .get-started {
-	font-size: 14px;
-
+	font-size: 28px;
 }
 .my-response {
     text-decoration: underline;

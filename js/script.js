@@ -18,8 +18,13 @@ $(function() {
     $.when(
 	$.get("tmpl/question-form.html", function(data) { questiontemplate = data; }),
 	$.get("tmpl/single-response.html", function(data) { responsetemplate = data; }),
-	$.get("tmpl/all-users.html", function(data) { alluserstemplate = data; })
+	$.get("tmpl/all-users.html", function(data) { alluserstemplate = data; }),
+	$.get("tmpl/users-scores.html", function(data) { usersscorestemplate = data; })
     ).then(function() {
+
+	var allcands = _.template(alluserstemplate, {"respondents": candidates});
+	$("#all-candidates").html( allcands );
+	
 
 	window.User = Backbone.Model.extend({
 	    defaults: {
@@ -121,7 +126,7 @@ $(function() {
 			respondents[i].score = scores[i].score;
 		    }
 		    scoredata.respondents = respondents;
-		    $("#container").html(_.template(alluserstemplate, scoredata));
+		    $("#container").html(_.template(usersscorestemplate, scoredata));
 		}
 	    }
 	});

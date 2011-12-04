@@ -1,16 +1,14 @@
 <div class="all-respondents">
 <% for ( var i = 0; i < respondents.length; i++) { %>
 
-	<div class="respondent">
-		<% if ( respondents[i].avatar_url ) { %>
-		<img class="avatar float-left" src="<%= respondents[i].avatar_url %>" height="183px" width="150px" />
-		<% } %>
-		<div class="respondent-info">
-			<h4 class="respondent-name"><%= respondents[i].name %></h4>
-			<p class="score">Score: <%= respondents[i].score %></p>
-			<p><span class="label"><%= respondents[i].responses.length %></span></p>
-		</div>
-	</div>
+   <div class="candidate float-left">
+     <img class="avatar float-left" src="img/candidates/<%= respondents[i].name.replace(" ","").toLowerCase() %>_v183.jpg" height="183px" width="150px" />
+     <div class="candidate-info">
+       <h4 class="candidate-name"><%= respondents[i].name %></h4>
+       <p><span class="label"><%= respondents[i].responses.length %></span></p>
+     </div>
+   </div>
 
 <% } %>
+<div class="clear-left"></div>
 </div>
