@@ -54,6 +54,12 @@ a {
 	text-align: left;
 }
 
+.header {
+    background-image: url('img/heart.png');
+    background-repeat: no-repeat;
+    padding-left: 44px;
+}
+
 .header h1.site-title {
 	color: #FF9132;
 	margin: 10px 0;
