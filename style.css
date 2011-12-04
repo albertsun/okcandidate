@@ -101,3 +101,9 @@ body.home .candidates .candidate .candidate-info {
 	font-size: 14px;
 
 }
+.my-response {
+    text-decoration: underline;
+}
+.accepted-response {
+    color: #81af91;
+}

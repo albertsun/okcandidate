@@ -4,7 +4,7 @@
 
 	<ul class="response-list">
 		<% for ( var i = 0; i < choices.length; i++ ) { %>
-			<li class="<% if ( user_response == choices[i].answer ) document.write(' my-response'); if ( jQuery.inArray( choices[i].answer, accepted_responses ) ) document.write(' accepted-response');  %>"><%= choices[i].desc %></li>
+			<li class="<%= choices[i].classes%>"><%= choices[i].answer %></li>
 		<% } %>
 	</ul>
 

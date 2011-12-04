@@ -4,13 +4,80 @@
  */
 
 
+var USER = {
+    name: "",
+    responses: []
+};
 
+
+
+var questiontemplate, responsetemplate;
 $(function() {
-    var questiontemplate;
+    
 
-    $.when( $.get("tmpl/question-form.html", function(data) {
-	questiontemplate = data;
-    }) ).then(function() {
+    $.when(
+	$.get("tmpl/question-form.html", function(data) { questiontemplate = data; }),
+	$.get("tmpl/single-response.html", function(data) { responsetemplate = data; })
+    ).then(function() {
+
+	window.User = Backbone.Model.extend({
+	    defaults: {
+		name: "George",
+		responses: []
+	    },
+	    initialize: function(data) {
+		console.log("user init");
+		//this.question = 
+	    }
+	});
+
+	window.Response = Backbone.Model.extend({
+	    defaults: {
+		question: "q",
+		response_answer: null,
+		accepted_responses: [],
+		importance: 10,
+		explanation: ""
+	    },
+	    initialize: function(data) {
+		this.set({ "question": window.questions_obj[this.toJSON().question_id].question });
+		
+		//console.log(this.toJSON());
+		this.view = new ResponseView({model: this});
+		this.view.render();
+	    }
+	});
+	window.ResponseView = Backbone.View.extend({
+	    tagName: "div",
+	    template: _.template(responsetemplate),
+
+	    initialize: function(options) {
+		console.log("responseview initialize");
+		this.model = options.model;
+		this.model.bind('change', this.render, this);
+		this.model.bind('destroy', this.remove, this);
+	    },
+	    render: function() {
+		var d = this.model.toJSON();
+		d.choices = window.questions_obj[d.question_id].choices;
+		for (var i=0,len=d.choices.length; i<len; i++) {
+		    d.choices[i].classes = "";
+		    if (d.accepted_responses == d.choices[i].answer) {
+			d.choices[i].classes += " my-response";
+		    }
+		    if ( _.indexOf(d.accepted_responses, d.choices[i].answer) != -1 ) {
+			d.choices[i].classes += " accepted-response";
+		    }
+		}
+		console.log(d);
+		$(this.el).html(this.template(d));
+		console.log(this.el);
+		$("#response-container").append($(this.el));
+	    },
+	    remove: function() {
+		$(this.el).remove();
+	    }
+	});
 
 	window.Question = Backbone.Model.extend({
 	    defaults: function() {
@@ -34,7 +101,7 @@ $(function() {
 	    },
 	    showCurr: function() {
 		var q = Questions.at(this.curr);
-		console.log(q);
+		//console.log(q);
 		q.change();
 	    },
 	    showNext: function() {
@@ -65,9 +132,34 @@ $(function() {
 	    render: function() {
 		$(this.el).html(this.template(this.model.toJSON()));
 		$(window.App.el).html($(this.el));
+		$("#skip-question").live("click", function(e) {
+		    Questions.showNext();
+		});
 		$("form").bind("submit", function(e) {
 		    e.preventDefault();
 		    var result = $(this).serializeArray();
+		    var response = {
+			question_id: Questions.at(Questions.curr).id,
+			accepted_responses: []
+		    };
+		    for (var i=0,len=result.length; i<len; i++) {
+			if (result[i].name == "user-response") {
+			    response["response_answer"] = result[i].value;
+			}
+			if (result[i].name == "accepted-response") {
+			    response["accepted_responses"].push(result[i].value);
+			}
+			if (result[i].name == "question-relevance") {
+			    response["importance"] = Number(result[i].value);
+			}
+			if (result[i].name == "explanation") {
+			    response["explanation"] = result[i].value;
+			}
+		    }
+		    var r = new Response(response)
+		    USER.responses.push(r);
+		    //console.log(r);
+		    //r.change();
 		    Questions.showNext();
 		});
 		return this;
@@ -80,6 +172,7 @@ $(function() {
 
 	window.AppView = Backbone.View.extend({
 	    el: $("#question-container"),
+	    //responses_el: $("#response-container"),
 	    initialize: function() {
 		console.log("appview initialize");
 		window.Questions = new QuestionList(questions);
@@ -93,6 +186,13 @@ $(function() {
 	    e.preventDefault();
 	    window.App = new AppView;
 	    App.render();
+	    window.questions_obj = (function(arr) {
+		var rv = {};
+		for (var i=0,len=arr.length; i<len; i++) {
+		    rv[arr[i].id] = arr[i];
+		}
+		return rv;
+	    }(Questions.toJSON()));
 	});
 	//$(".get-started").click();
 
