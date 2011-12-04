@@ -1,56 +1,73 @@
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css" />
-	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/underscore-min.js"></script>
-	<script src="js/backbone-min.js"></script>
-	<script src="js/algo.js"></script>
-	<script src="http://respecty.com/r.js"></script>
-	<!--<script src="r.js"></script>-->
-	<script src="js/script.js"></script>
+    <meta name="author" content="Albert Sun" />
+    <meta name="author" content="Daniel Bachhuber" />
+    <meta name="author" content="Jay Zalowitz" />
+    <meta name="author" content="Ashwin Shandilya" />
 
-</head>
-<body class="home">
-<div class="container">
-	<div class="header">
 
-	  <a href="http://okcandidate.com/"><h1 class="site-title">OkCandidate</h1></a>
+    <meta name="description" content="OkCandidate is a website dedicated to helping you find candidates you'll love." />
+    <meta name="keywords" content="Republican Candidates, Awesome Websites, Politics, United States, Presidents, Presidential Candidates" />
 
-	</div>
-	<div class="main">
+
+    <meta property="og:title" content="OkCandidate is a website dedicated to helping you find candidates you'll love. We ask questions to and see how much you relate to the 2012 Republican Candidates for president."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://albertsun.github.com/okcandidate/img/heart.png" />
+    <meta property="og:url" content="http://www.okcandidate.com"/>
+    <meta property="og:site_name" content="OkCandidate - find candidates you'll love."/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/algo.js"></script>
+    <script src="http://respecty.com/r.js"></script>
+    <!--<script src="r.js"></script>-->
+    <script src="js/script.js"></script>
+
+  </head>
+  <body class="home">
+    <div class="container">
+      <div class="header">
+
+	<a href="http://okcandidate.com/"><h1 class="site-title">OkCandidate</h1></a>
+
+      </div>
+      <div class="main">
 
 	<div class="content"  id="container">
 	  <div id="question-container">
-		<div class="find-your-match">
-			<h3>Find Your Match <a class="get-started" href="form.html">Get Started &rarr;</a></h3>
-		</div>
-		
-		<div class="candidates" id="all-candidates">
-		</div>
+	    <div class="find-your-match">
+	      <h3>Find Your Match <a class="get-started" href="form.html">Get Started &rarr;</a></h3>
+	    </div>
+	    
+	    <div class="candidates" id="all-candidates">
+	    </div>
 	  </div>
 	  <div id="response-container">
 	  </div>
 	</div>
 
-	</div>
-	<div class="footer">
+      </div>
+      <div class="footer">
 
-	</div>
-</div>
-<script type="text/javascript">
+      </div>
+    </div>
+    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-27466254-1']);
-  _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27466254-1']);
+      _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-</script>
-</body>
+    </script>
+  </body>
 </html>
