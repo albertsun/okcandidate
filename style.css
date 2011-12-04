@@ -115,7 +115,7 @@ body.home .candidates .candidate .candidate-info {
     color: #81af91;
 }
 
-.all-respondents {
+ol.all-respondents {
     margin-left: 20px;
 }
 .score {
