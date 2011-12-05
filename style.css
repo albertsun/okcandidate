@@ -61,8 +61,8 @@ a {
 }
 
 .header h1.site-title {
-	color: #FF9132;
-	margin: 10px 0;
+    color: #FF9132;
+    margin: 10px 0;
 }
 
 .find-your-match {
@@ -129,4 +129,9 @@ ol.all-respondents {
   color: #000000;
   font-size: 1.5em;
   padding: 6px 3px;
+}
+
+.footer {
+    color: #FF9132;
+    margin: 10px 0;
 }
