@@ -311,21 +311,21 @@ var candidates = [
             }   
         ]
     },
-    {
-        name: "Jimmy McMillan",
-        url: "http://mcmillan2012.com/",
-        photourl: "http://www.respecty.com/candidates/jimmy.jpg",
-        type: "candidate",
-        responses: [
-            {
-                question_id: "5", //key to question
-                response_answer: "Yes", //key to question choice
-                accepted_responses: ["Yes"], //keys to question choice
-                importance: 250, //one of 0, 1, 10, 50, 250
-                explanation: "The rent is too damn high!"
-            }
-        ]
-    },
+    // {
+    //     name: "Jimmy McMillan",
+    //     url: "http://mcmillan2012.com/",
+    //     photourl: "http://www.respecty.com/candidates/jimmy.jpg",
+    //     type: "candidate",
+    //     responses: [
+    //         {
+    //             question_id: "5", //key to question
+    //             response_answer: "Yes", //key to question choice
+    //             accepted_responses: ["Yes"], //keys to question choice
+    //             importance: 250, //one of 0, 1, 10, 50, 250
+    //             explanation: "The rent is too damn high!"
+    //         }
+    //     ]
+    // },
     {
         name: "Ron Paul",
         url: "http://ronpaul2012.com/",
@@ -360,13 +360,13 @@ var candidates = [
                 importance: 50,
                 explanation: "",
             },
-            {
-                question_id: "5",
-                response_answer: "Yes",
-                accepted_responses: ["Yes"],
-                importance: 250,
-                explanation: "We agree with Jimmy that the rent is too damn high",
-            },
+            // {
+            //     question_id: "5",
+            //     response_answer: "Yes",
+            //     accepted_responses: ["Yes"],
+            //     importance: 250,
+            //     explanation: "We agree with Jimmy that the rent is too damn high",
+            // },
             {
                 question_id: "6",
                 response_answer: "Keep",
@@ -683,15 +683,15 @@ var questions = [
             
         ]
     },
-    {
-        id: "5",
-        question: "Is the rent too damn high?",
-        choices: [
-            {answer: "Yes", desc: "The Rent is too damn high!"},
-            {answer: "No", desc: "The Rent is not too damn high!"}
+    // {
+    //     id: "5",
+    //     question: "Is the rent too damn high?",
+    //     choices: [
+    //         {answer: "Yes", desc: "The Rent is too damn high!"},
+    //         {answer: "No", desc: "The Rent is not too damn high!"}
             
-        ]
-    },
+    //     ]
+    // },
     {
         id: "6",
         question: "In general, what do you think the government should do to federal tax rates, if anything?",
