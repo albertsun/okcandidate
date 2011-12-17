@@ -327,6 +327,84 @@ var candidates = [
     //     ]
     // },
     {
+        name: "Barack Obama",
+        url: "http://www.barackobama.com",
+        photourl: "http://www.google.com",
+        type: "candidate",
+        responses: [
+            {
+                question_id: "1", 
+                response_answer: "Yes", 
+                accepted_responses: ["Yes"], 
+                importance: 50, 
+                explanation: ""
+            },
+            {
+                question_id: "2",
+                response_answer: "Yes",
+                accepted_responses: ["Yes"],
+                importance: 50,
+                explanation: "",
+            },
+            {
+                question_id: "3",
+                response_answer: "Maintain",
+                accepted_responses: ["Lower","Maintain"],
+                importance: 50,
+                explanation: "",
+            },
+            {
+                question_id: "4",
+                response_answer: "Civil Unions",
+                accepted_responses: ["Civil Unions","For"],
+                importance: 10,
+                explanation: "",
+            },
+            {
+                question_id: "5",
+                response_answer: "Yes",
+                accepted_responses: ["Yes"],
+                importance: 0,
+                explanation: "",
+            },
+            {
+                question_id: "6",
+                response_answer: "Raise",
+                accepted_responses: ["Raise", "Keep"],
+                importance: 50,
+                explanation: "",
+            },
+            {
+                question_id: "7",
+                response_answer: "Same Benefits", // Not Exist , Private , Lower Benefits , Same Benefits
+                accepted_responses: ["Lower Benefits", "Same Benefits"],
+                importance: 50,
+                explanation: "",
+            },
+            {
+                question_id: "8",
+                response_answer: "Path", // Deport , Prevent Benefits , Eligble Benefits , Path
+                accepted_responses: ["Eligble Benefits", "Path"],
+                importance: 50,
+                explanation: "",
+            },
+            {
+                question_id: "9",
+                response_answer: "Involve", // Out, Protect, Involve
+                accepted_responses: ["Involve", "Protect"],
+                importance: 50,
+                explanation: "",
+            },
+            {
+                question_id: "10",
+                response_answer: "Maintain", // Abolish , Drastic , Reduce , Maintain
+                accepted_responses: ["Maintain", "Reduce"],
+                importance: 50,
+                explanation: "",
+            }   
+        ]
+    },
+    {
         name: "Ron Paul",
         url: "http://ronpaul2012.com/",
         photourl: "http://www.respecty.com/candidates/ron.jpg",
