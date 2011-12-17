@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.15)
 # Database: okcandidate
-# Generation Time: 2011-12-17 21:13:54 +0000
+# Generation Time: 2011-12-17 21:25:17 +0000
 # ************************************************************
 
 
@@ -18,6 +18,46 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table questions
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `questions`;
+
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table responses
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `responses`;
+
+CREATE TABLE `responses` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `question_id` int(11) NOT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `username` varchar(20) NOT NULL DEFAULT '',
+  `password` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table users_questions_responses
