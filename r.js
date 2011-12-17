@@ -7,22 +7,22 @@ var candidates = [
         responses: [
             {
                 question_id: "1", 
-                response_answer: "Intellegent Design", //key to question choice
-                accepted_responses: ["Intellegent Design"], //keys to question choice
+                response_answer: "Intelligent Design", //key to question choice
+                accepted_responses: ["Intelligent Design"], //keys to question choice
                 importance: 50, 
                 explanation: "What I support is putting all science on the table and then letting students decide. I don't think it's a good idea for government to come down on one side of scientific issue or another, when there is reasonable doubt on both sides."
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life"],
                 importance: 250,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
             {
                 question_id: "3",
                 response_answer: "Maintain",
-                accepted_responses: ["Maintain"],
+                accepted_responses: ["Maintain", "Increase"],
                 importance: 50,
                 explanation: "… it appears for President Obama that he is acting more on political strategy than military strategy. That's very concerning, because it also seems that this is more the Obama-Biden plan for early withdrawal, as opposed to the Petraeus plan.",
             },
@@ -49,14 +49,14 @@ var candidates = [
             },
             {
                 question_id: "7",
-                response_answer: "Lower", // Not Exist , Private , Lower Benefits , Same Benefits
+                response_answer: "Lower", // Not Exist , Privatized , Lower Benefits , Same Benefits
                 accepted_responses: ["Lower"],
                 importance: 10,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Prevent Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path
+                response_answer: "Prevent Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
                 accepted_responses: ["Prevent Benefits"],
                 importance: 50,
                 explanation: "",
@@ -86,21 +86,21 @@ var candidates = [
             {
                 question_id: "1", 
                 response_answer: "Yes", 
-                accepted_responses: ["Yes", "Intellegent Design"],
+                accepted_responses: ["Yes", "Intelligent Design"],
                 importance: 1, 
                 explanation: "Evolution certainly seems to express the closest understanding we can now have….I believe evolution should be taught as science, and intelligent design should be taught as philosophy."
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life","Pro-Choice with restrictions"],
                 importance: 10,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
             {
                 question_id: "3",
                 response_answer: "Maintain",
-                accepted_responses: ["Maintain"],
+                accepted_responses: ["Maintain","Increase"],
                 importance: 50,
                 explanation: "None of the generals recommended the speed of the drawdown that the president wants",
             },
@@ -127,15 +127,15 @@ var candidates = [
             },
             {
                 question_id: "7",
-                response_answer: "Private", // Not Exist , Private , Lower Benefits , Same Benefits
-                accepted_responses: ["Private"],
+                response_answer: "Privatized", // Not Exist , Privatized , Lower Benefits , Same Benefits
+                accepted_responses: ["Privatized"],
                 importance: 10,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Path", // Deport , Prevent Benefits , Eligble Benefits , Path
-                accepted_responses: ["Path"],
+                response_answer: "Path to Citizenship", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
+                accepted_responses: ["Path to Citizenship"],
                 importance: 50,
                 explanation: "",
             },
@@ -170,15 +170,15 @@ var candidates = [
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life","Pro-Choice with restrictions"],
                 importance: 50,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
             {
                 question_id: "3",
                 response_answer: "Lower",
-                accepted_responses: ["Lower"],
+                accepted_responses: ["Lower","Maintain"],
                 importance: 50,
                 explanation: "If you can't define a winning exit strategy for the American people, where we somehow come out ahead, then we're wasting our money, and we're wasting our strategic resources … It's a tribal state, and it always will be. Whether we like it or not, whenever we withdraw from Afghanistan, whether it's now or years from now, we'll have an incendiary situation. Should we stay and play traffic cop? I don't think that serves our strategic interests.",
             },
@@ -205,14 +205,14 @@ var candidates = [
             },
             {
                 question_id: "7",
-                response_answer: "Private", // Not Exist , Private , Lower Benefits , Same Benefits
-                accepted_responses: ["Private"],
+                response_answer: "Privatized", // Not Exist , Privatized , Lower Benefits , Same Benefits
+                accepted_responses: ["Privatized"],
                 importance: 10,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Eligble Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path
+                response_answer: "Eligble Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
                 accepted_responses: ["Eligble Benefits"],
                 importance: 50,
                 explanation: "",
@@ -248,8 +248,8 @@ var candidates = [
             },
             {
                 question_id: "2",
-                response_answer: "Yes",
-                accepted_responses: ["Yes","No"],
+                response_answer: "Pro-Choice",
+                accepted_responses: ["Pro-Life","Pro-Choice","Pro-Choice with restrictions"],
                 importance: 1,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
@@ -283,15 +283,15 @@ var candidates = [
             },
             {
                 question_id: "7",
-                response_answer: "Private", // Not Exist , Private , Lower Benefits , Same Benefits
-                accepted_responses: ["Private"],
+                response_answer: "Privatized", // Not Exist , Privatized , Lower Benefits , Same Benefits
+                accepted_responses: ["Privatized"],
                 importance: 10,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Path", // Deport , Prevent Benefits , Eligble Benefits , Path
-                accepted_responses: ["Path"],
+                response_answer: "Path to Citizenship", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
+                accepted_responses: ["Path to Citizenship"],
                 importance: 50,
                 explanation: "",
             },
@@ -342,7 +342,7 @@ var candidates = [
             {
                 question_id: "2",
                 response_answer: "Yes",
-                accepted_responses: ["Yes"],
+                accepted_responses: ["Pro-Choice", "Pro-Choice with restrictions"],
                 importance: 50,
                 explanation: "",
             },
@@ -370,21 +370,21 @@ var candidates = [
             {
                 question_id: "6",
                 response_answer: "Raise",
-                accepted_responses: ["Raise", "Keep"],
+                accepted_responses: ["Raise", "Keep Current Rates"],
                 importance: 50,
                 explanation: "",
             },
             {
                 question_id: "7",
-                response_answer: "Same Benefits", // Not Exist , Private , Lower Benefits , Same Benefits
+                response_answer: "Same Benefits", // Not Exist , Privatized , Lower Benefits , Same Benefits
                 accepted_responses: ["Lower Benefits", "Same Benefits"],
                 importance: 50,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Path", // Deport , Prevent Benefits , Eligble Benefits , Path
-                accepted_responses: ["Eligble Benefits", "Path"],
+                response_answer: "Path to Citizenship", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
+                accepted_responses: ["Eligble Benefits", "Path to Citizenship"],
                 importance: 50,
                 explanation: "",
             },
@@ -419,8 +419,8 @@ var candidates = [
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life"],
                 importance: 10,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
@@ -447,21 +447,21 @@ var candidates = [
             // },
             {
                 question_id: "6",
-                response_answer: "Keep",
-                accepted_responses: ["Keep"],
+                response_answer: "Keep Current Rates",
+                accepted_responses: ["Keep Current Rates"],
                 importance: 50,
                 explanation: "",
             },
             {
                 question_id: "7",
-                response_answer: "Not Exist", // Not Exist , Private , Lower Benefits , Same Benefits
+                response_answer: "Not Exist", // Not Exist , Privatized , Lower Benefits , Same Benefits
                 accepted_responses: ["Not Exist"],
                 importance: 50,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Prevent Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path
+                response_answer: "Prevent Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
                 accepted_responses: ["Prevent Benefits"],
                 importance: 50,
                 explanation: "",
@@ -497,15 +497,15 @@ var candidates = [
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life"],
                 importance: 50,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
             {
                 question_id: "3",
                 response_answer: "Maintain",
-                accepted_responses: ["Maintain"],
+                accepted_responses: ["Maintain", "Increase"],
                 importance: 50,
                 explanation: "",
             },
@@ -532,14 +532,14 @@ var candidates = [
             },
             {
                 question_id: "7",
-                response_answer: "Private", // Not Exist , Private , Lower Benefits , Same Benefits
-                accepted_responses: ["Private"],
+                response_answer: "Privatized", // Not Exist , Privatized , Lower Benefits , Same Benefits
+                accepted_responses: ["Privatized"],
                 importance: 10,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Eligeble Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path
+                response_answer: "Eligeble Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
                 accepted_responses: ["Prevent Benefits"],
                 importance: 50,
                 explanation: "",
@@ -575,15 +575,15 @@ var candidates = [
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life"],
                 importance: 10,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
             {
                 question_id: "3",
                 response_answer: "Maintain",
-                accepted_responses: ["Maintain"],
+                accepted_responses: ["Maintain","Increase"],
                 importance: 50,
                 explanation: "",
             },
@@ -603,21 +603,21 @@ var candidates = [
             },
             {
                 question_id: "6",
-                response_answer: "Keep",
-                accepted_responses: ["Keep"],
+                response_answer: "Keep Current Rates",
+                accepted_responses: ["Keep Current Rates"],
                 importance: 50,
                 explanation: "",
             },
             {
                 question_id: "7",
-                response_answer: "Same Benefits", // Not Exist , Private , Lower Benefits , Same Benefits
+                response_answer: "Same Benefits", // Not Exist , Privatized , Lower Benefits , Same Benefits
                 accepted_responses: ["Same Benefits"],
                 importance: 10,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Prevent Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path
+                response_answer: "Prevent Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
                 accepted_responses: ["Prevent Benefits"],
                 importance: 50,
                 explanation: "",
@@ -653,15 +653,15 @@ var candidates = [
             },
             {
                 question_id: "2",
-                response_answer: "No",
-                accepted_responses: ["No"],
+                response_answer: "Pro-Life",
+                accepted_responses: ["Pro-Life"],
                 importance: 250,
                 explanation: "http://2012.republican-candidates.org/abortion.pl",
             },
             {
                 question_id: "3",
                 response_answer: "Maintain",
-                accepted_responses: ["Maintain"],
+                accepted_responses: ["Maintain","Increase"],
                 importance: 50,
                 explanation: "",
             },
@@ -688,14 +688,14 @@ var candidates = [
             },
             {
                 question_id: "7",
-                response_answer: "Private", // Not Exist , Private , Lower Benefits , Same Benefits
-                accepted_responses: ["Private"],
+                response_answer: "Privatized", // Not Exist , Privatized , Lower Benefits , Same Benefits
+                accepted_responses: ["Privatized"],
                 importance: 250,
                 explanation: "",
             },
             {
                 question_id: "8",
-                response_answer: "Eligble Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path
+                response_answer: "Eligble Benefits", // Deport , Prevent Benefits , Eligble Benefits , Path to Citizenship
                 accepted_responses: ["Eligble Benefits"],
                 importance: 250,
                 explanation: "",
@@ -730,26 +730,28 @@ var questions = [
         id: "2",
         question: "What are your views on the issue of abortion?",
         choices: [
-            {answer: "Yes", desc: "I am Pro-Choice"},
-            {answer: "No", desc: "I am Pro-Life"}
+            {answer: "Pro-Choice", desc: "I am generally Pro-Choice"},
+            {answer: "Pro-Life", desc: "I am generally Pro-Life"},
+            {answer: "Pro-Choice with restrictions", desc: "I am Pro-Choice, but I support numerous restrictions on a person's ability to have an abortion (including parental consent, waiting periods, etc.)"}
         ]
     },
     {
         id: "3",
-        question: "In Afghanistan, what should the US do?",
+        question: "In Afghanistan, what should the US do with its military presence over the next four years?",
         choices: [
+            {answer: "Increase", desc: "Increase its military presence in Afghanistan."},
             {answer: "Maintain", desc: "Maintain its current troop levels."},
             {answer: "Lower", desc: "Reduce or eliminate its military presence entirely."}
         ]
     },
     {
         id: "1",
-        question: "Do you believe in Charles Darwin's Theory of Evolution?",
-        desc: "Charles Darwin's theory of evolution, not the bad movie where they defeated ailens with shampoo",
+        question: "What are your views on the subject of Evolution?",
+        desc: "Charles Darwin's theory of evolution",
         choices: [
             {answer: "Yes", desc: "I believe in evolution."},
             {answer: "No", desc: "I do not believe in evolution."},
-            {answer: "Intellegent Design", desc: "I believe in intelligent design (evolution guided by an external plan or being)"}
+            {answer: "Intelligent Design", desc: "I believe in intelligent design (evolution guided by an external plan or being)"}
         ]
     },
     {
@@ -777,7 +779,7 @@ var questions = [
         choices: [
             {answer: "Raise", desc: "Raise tax rates"},
             {answer: "Lower", desc: "Lower tax rates"},
-            {answer: "Keep", desc: "Keep tax rates at current levels"},         
+            {answer: "Keep Current Rates", desc: "Keep Current Rates tax rates at current levels"},         
         ]
     },
     {
@@ -785,7 +787,7 @@ var questions = [
         question: "Ideally, how should the Social Security program look in 30 years?",
         choices: [
             {answer: "Not Exist", desc: "It should no longer exist."},
-            {answer: "Private", desc: "It should be privatized."},
+            {answer: "Privatized", desc: "It should be privatized."},
             {answer: "Lower Benefits", desc: "It should exist in its current form, but provide a lower level of benefits."},    
             {answer: "Same Benefits", desc: "It should exist in its current form, and provide the same level of benefits."},                    
         ]
@@ -797,7 +799,7 @@ var questions = [
             {answer: "Deport", desc: "Deport them."},
             {answer: "Prevent Benefits", desc: "Prevent them from receiving any government benefits or participating in government programs, but don't deport them."},
             {answer: "Eligble Benefits", desc: "Make them eligible for some educational or social benefits to bring them into mainstream society."},    
-            {answer: "Path", desc: "Provide a path to citizenship or grant amnesty to them."},                  
+            {answer: "Path to Citizenship", desc: "Provide a path to citizenship or grant amnesty to them."},                  
         ]
     },
     {
