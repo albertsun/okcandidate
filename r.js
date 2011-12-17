@@ -647,16 +647,7 @@ var candidates = [
 
 
 var questions = [
-    {
-        id: "1",
-        question: "Do you believe in Charles Darwin's Theory of Evolution?",
-        desc: "Charles Darwin's theory of evolution, not the bad movie where they defeated ailens with shampoo",
-        choices: [
-            {answer: "Yes", desc: "I believe in evolution."},
-            {answer: "No", desc: "I do not believe in evolution."},
-            {answer: "Intellegent Design", desc: "I believe in intelligent design (evolution guided by an external plan or being)"}
-        ]
-    },
+    
     {
         id: "2",
         question: "What are your views on the issue of abortion?",
@@ -671,6 +662,16 @@ var questions = [
         choices: [
             {answer: "Maintain", desc: "Maintain its current troop levels."},
             {answer: "Lower", desc: "Reduce or eliminate its military presence entirely."}
+        ]
+    },
+    {
+        id: "1",
+        question: "Do you believe in Charles Darwin's Theory of Evolution?",
+        desc: "Charles Darwin's theory of evolution, not the bad movie where they defeated ailens with shampoo",
+        choices: [
+            {answer: "Yes", desc: "I believe in evolution."},
+            {answer: "No", desc: "I do not believe in evolution."},
+            {answer: "Intellegent Design", desc: "I believe in intelligent design (evolution guided by an external plan or being)"}
         ]
     },
     {
